@@ -3,7 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>School Help Platform</title>
+  <meta name="description" content="搭把手校园互助平台：代取快递、代买物品、座位互助。校园跑腿产品交互原型。">
+  <meta name="theme-color" content="#2463eb">
+  <title>搭把手 · 校园互助</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%232463eb'/%3E%3Cpath d='M12 12h9v7h7v9h-9v-7h-7z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body></body>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#hall"><span class="brandmark">搭</span><span>搭把手<small>CAMPUS TOGETHER</small></span></a>
+    <button class="campus" data-action="campus"><span class="campus-icon">⌖</span><span>青禾大学<small>主校区 · 演示校园</small></span><span>⌄</span></button>
+    <span class="nav-label">校园生活</span>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-view="hall"><span data-icon="grid"></span>任务大厅</button>
+      <button class="nav-item" data-action="publish"><span data-icon="plus"></span>发布任务</button>
+      <button class="nav-item" data-view="orders"><span data-icon="orders"></span>我的订单<span class="nav-count" id="order-count">1</span></button>
+      <button class="nav-item" data-view="credit"><span data-icon="shield"></span>信用中心</button>
+      <button class="nav-item" data-view="guide"><span data-icon="book"></span>互助指南</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-tile"><span data-icon="heart"></span><strong>小小帮助，大大温暖</strong><p>让每一次顺路<br>都成为一次连接。</p><button data-view="guide">了解互助规则</button></div><button class="profile" data-action="account"><span class="avatar">林</span><span>林同学<small>体验账号 · 未认证</small></span><span>⌄</span></button></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumb">校园互助 <span>/</span> <strong id="crumb">任务大厅</strong></div><div class="header-actions"><span class="demo-label">交互演示 · 非真实交易</span><button class="icon-button" data-action="notifications" aria-label="消息通知"><span data-icon="bell"></span><i></i></button><button class="mini-avatar" data-action="account" aria-label="打开个人账号">林</button></div></header>
+    <main id="app">
+      <div class="page-heading"><div><div class="eyebrow">HELLO, CAMPUS</div><h1>今天，顺路帮个忙。</h1><p>把琐事交给同学，把时间留给自己。</p></div><button class="button primary" data-action="publish"><span data-icon="plus"></span>发布任务</button></div>
+      <div class="dashboard"><section class="main-column"><div class="services"><button class="service blue" data-category="快递代取"><span class="service-icon" data-icon="package"></span><strong>快递代取</strong><small>不用奔波，轻松取件</small></button><button class="service orange" data-category="物品代买"><span class="service-icon" data-icon="bag"></span><strong>物品代买</strong><small>生活所需，顺手带到</small></button><button class="service purple" data-view="seats"><span class="service-icon" data-icon="book"></span><strong>座位互助</strong><small>依规找座，安心学习</small></button></div><div class="section-heading"><h2>发现校园任务 <span>6</span></h2><span class="subtle">同校互助 · 顺路就好</span></div><div class="filter-panel"><div class="tabs"><button class="selected">全部任务</button><button>快递代取</button><button>物品代买</button></div><div class="filters"><span>所有地点</span><span>最新发布</span><span class="search-placeholder">搜索任务或地点</span></div></div><div class="task-grid" id="task-list"><article class="task-card"><div class="card-top"><span class="tag blue-tag">快递代取</span><span class="money">¥ 4<small>/ 单</small></span></div><h3>帮取一件小快递，送到明德楼</h3><p>普通小件 · 约 1 kg · 送到楼下即可</p><div class="route"><span>校园菜鸟驿站</span><span>明德楼</span></div><div class="task-meta">今天 18:30 前送达 · 预计 15 分钟</div><div class="card-footer"><span>陈同学 · 校园已认证</span><button class="button outline">查看任务</button></div></article><article class="task-card"><div class="card-top"><span class="tag orange-tag">物品代买</span><span class="money">¥ 5<small>/ 单</small></span></div><h3>顺路带两本笔记本和一支黑笔</h3><p>A5 方格本 · 黑色中性笔 0.5 mm</p><div class="route"><span>校园文具店</span><span>知行楼</span></div><div class="task-meta">今天 19:00 前送达 · 预计 20 分钟</div><div class="card-footer"><span>许同学 · 校园已认证</span><button class="button outline">查看任务</button></div></article></div></section><aside class="right-column"><section class="welcome-card"><span class="tag">同学，欢迎回来</span><h2>让空闲时间<br>多一点价值。</h2><p>完成校园认证，<br>开启你的第一次互助。</p><button class="button" data-action="account">完成校园认证</button><div class="trust-line"><span data-icon="shield"></span>同校认证 · 费用透明 · 双向保障</div></section><section class="rail-card"><div class="rail-heading"><h3>进行中的互助</h3><span class="small-badge">1</span></div><span class="tag blue-tag">配送中</span><h4>生活用品送到明德楼</h4><p class="subtle">接单同学已取到物品</p><div class="progress-track"><i></i></div><div class="progress-labels"><span>已接单</span><span>配送中</span><span>待确认</span></div><button class="text-button" data-view="orders">查看订单进度</button></section><section class="notice"><span data-icon="shield"></span><div><strong>安心互助，从规则开始</strong><p>取件码仅向接单同学开放。<br>费用变更需双方确认。</p><button class="text-button" data-view="guide">阅读平台保障说明</button></div></section></aside></div>
+    </main>
+    <footer>搭把手 · 让校园生活轻一点<span>产品原型 V1.0 · 所有任务与账号均为演示数据</span></footer>
+  </div>
+  <dialog id="modal" aria-labelledby="dialog-title"><div id="modal-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
 </html>
